@@ -17,11 +17,11 @@ class _BestSellerListState extends State<BestSellerList> {
   void initState() {
     // TODO: implement initState
     getBestSellerBooks();
-    setState(() {
-    });
+
   }
   Future<void> getBestSellerBooks() async {
     data = await GetBooks().getBooks(endPoint: "volumes?q=computer");
+    setState(() {});
   }
   @override
   Widget build(BuildContext context) {
