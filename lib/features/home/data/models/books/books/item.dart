@@ -1,0 +1,46 @@
+import 'access_info.dart';
+import 'sale_info.dart';
+import 'search_info.dart';
+import 'volume_info.dart';
+
+class Item {
+	String? kind;
+	String? id;
+	String? etag;
+	String? selfLink;
+	VolumeInfo? volumeInfo;
+	SaleInfo? saleInfo;
+	AccessInfo? accessInfo;
+	SearchInfo? searchInfo;
+
+	Item({
+		this.kind, 
+		this.id, 
+		this.etag, 
+		this.selfLink, 
+		this.volumeInfo, 
+		this.saleInfo, 
+		this.accessInfo, 
+		this.searchInfo, 
+	});
+
+	factory Item.fromJson(Map<String, dynamic> json) => Item(
+				kind: json['kind'] as String?,
+				id: json['id'] as String?,
+				etag: json['etag'] as String?,
+				selfLink: json['selfLink'] as String?,
+				volumeInfo: json['volumeInfo'] == null
+						? null
+						: VolumeInfo.fromJson(json['volumeInfo']),
+				saleInfo: json['saleInfo'] == null
+						? null
+						: SaleInfo.fromJson(json['saleInfo'] as Map<String, dynamic>),
+				accessInfo: json['accessInfo'] == null
+						? null
+						: AccessInfo.fromJson(json['accessInfo'] as Map<String, dynamic>),
+				searchInfo: json['searchInfo'] == null
+						? null
+						: SearchInfo.fromJson(json['searchInfo'] as Map<String, dynamic>),
+			);
+
+}
