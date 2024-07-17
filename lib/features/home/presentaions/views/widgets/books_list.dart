@@ -17,22 +17,27 @@ class _BooksListState extends State<BooksList> {
     super.initState();
     getBooks();
   }
+
   List<Item> data = [];
   Future<void> getBooks() async {
     data = await GetBooks().getBooks(endPoint: "volumes?q=horror");
     setState(() {});
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 200, // Adjust the height as needed
-        child: ListView.builder(
-          itemCount: data.length,
-          itemBuilder: (context, index) {
-            return BooksWidget(item: data[index],data: data,);
-          },
-          scrollDirection: Axis.horizontal,
-        ),
-      );
+      height: 200, // Adjust the height as needed
+      child: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          return BooksWidget(
+            item: data[index],
+            data: data,
+          );
+        },
+        scrollDirection: Axis.horizontal,
+      ),
+    );
   }
 }
