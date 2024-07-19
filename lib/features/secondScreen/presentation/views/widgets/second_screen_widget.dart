@@ -68,7 +68,7 @@ class SecondScreenWidget extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 40,),
+        SizedBox(height: 30,),
         Padding(
           padding: const EdgeInsets.only(left: 40),
           child: Container(

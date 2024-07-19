@@ -7,7 +7,7 @@ class ListForSecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150, // Adjust the height as needed
+      height: 100, // Adjust the height as needed
       child: ListView.builder(
         itemCount: data.length,
         itemBuilder: (context, index) {

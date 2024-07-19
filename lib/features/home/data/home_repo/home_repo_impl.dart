@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo{
   Future<Either<Faliures, List<Item>>> fetchAllBooks() async{
     try {
       List<Item> booksList = [];
-      Map<String, dynamic> jsonData = await apiService.get(endPoint: "endPoint");
+      Map<String, dynamic> jsonData = await apiService.get(endPoint: "volumes?Filtering=free-ebooks&q=subject:");
       List<dynamic> books = jsonData["items"];
       for (var i in books) {
         booksList.add(Item.fromJson(i));
@@ -29,7 +29,7 @@ class HomeRepoImpl implements HomeRepo{
   Future<Either<Faliures, List<Item>>> fetchNewestBooks() async{
     try {
       List<Item> booksList = [];
-      Map<String, dynamic> jsonData = await apiService.get(endPoint: "endPoint");
+      Map<String, dynamic> jsonData = await apiService.get(endPoint: "volumes?Filtering=free-ebooks&q=subject:&Sorting=newest");
       List<dynamic> books = jsonData["items"];
       for (var i in books) {
         booksList.add(Item.fromJson(i));

@@ -9,8 +9,8 @@ class WidgetForList extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 150,
-          width: 100,
+          height: 100,
+          width: 80,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               image: DecorationImage(image: NetworkImage("${item.volumeInfo?.imageLinks?.thumbnail}"),fit: BoxFit.fill)
